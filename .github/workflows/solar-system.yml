@@ -1,15 +1,15 @@
  name: Solar System Workflow
-  on:
+ on:
     workflow_dispatch: null
     push:
       branches:
         - main
         - feature/*
-  env:
+ env:
     MONGO_URI: mongodb+srv://supercluster.d83jj.mongodb.net/superData
     MONGO_USERNAME: superuser
     MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
-  jobs:
+ jobs:
     unit-testing:
       name: Unit Testing
       runs-on: ubuntu-latest
@@ -29,3 +29,4 @@
           with:
             name: Mocha-Test-Result
             path: test-results.xml
+
